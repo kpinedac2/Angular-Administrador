@@ -1,0 +1,100 @@
+<nav class="side-navbar">
+    <!-- Sidebar Header-->
+    <div class="sidebar-header d-flex align-items-center">
+        <a href="pages-profile.html">
+            <div class="avatar"><img src="./assets/img/avatar-11.jpg" alt="..." class="img-fluid rounded-circle"></div>
+        </a>
+        <div class="title">
+            <h1 class="h4">Kervins P.C</h1>
+            <p>Administrador</p>
+        </div>
+    </div>
+    <!-- Sidebar Navidation Menus-->
+    <span class="heading">Negocio</span>
+    <ul class="list-unstyled">
+        <li>
+            <a [routerLink]='["/"]'>
+                <i class="fa fa-home"></i>Principal
+            </a>
+        </li>
+        <li>
+            <a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse">
+                <i class="fa fa-gear"></i>Administración
+            </a>
+            <ul id="tablesDropdown" class="collapse list-unstyled ">
+                <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                    <a [routerLink]='["/empleados"]'>
+                       Empleados
+                    </a>
+                </li>
+                <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                    <a [routerLink]='["/usuarios"]'>
+                        Usuarios
+                    </a>
+                </li>
+                <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                    <a [routerLink]='["/roles"]'>
+                        Roles
+                    </a>
+                </li>
+                <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                    <a [routerLink]='["/permisos"]'>
+                        Permisos a Roles
+                    </a>
+                </li>
+                <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                    <a [routerLink]='["/marcas"]'>
+                     Marcas
+                    </a>
+                </li>
+                <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                    <a [routerLink]='["/porcentajes"]'>
+                       porcentajes
+                    </a>
+                </li>
+                <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                        <a [routerLink]='["/tipoproducto"]'>
+                           Tipo Productos
+                        </a>
+                    </li>
+                 <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                        <a [routerLink]='["/existencias"]'>
+                           Existencias
+                        </a>
+                    </li>
+                    <li [routerLinkActive]='["active"]' (click)='collapse()'>
+                        <a [routerLink]='["/tipoventa"]'>
+                           Tipo de Venta
+                        </a>
+                    </li>
+            </ul>
+        </li>
+    </ul>
+    <span class="heading">Reportes</span>
+    <ul class="list-unstyled">
+        <li>
+            <a href="#tablesDropdown2" aria-expanded="false" data-toggle="collapse">
+                <i class="fa fa-gear"></i>Historicos
+            </a>
+            <ul id="tablesDropdown2" class="collapse list-unstyled ">
+                <li [routerLinkActive]='["active"]'>
+                    <a [routerLink]='["/personas"]' (click)='collapse()'>
+                        Personas
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#tablesDropdown3" aria-expanded="false" data-toggle="collapse">
+                <i class="fa fa-gear"></i>Personales
+            </a>
+            <ul id="tablesDropdown3" class="collapse list-unstyled ">
+                <li [routerLinkActive]='["active"]'>
+                    <a [routerLink]='["/personas"]' (click)='collapse()'>
+                        Personas
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

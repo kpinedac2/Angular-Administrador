@@ -1,0 +1,104 @@
+<!-- Page Header-->
+<header class="page-header">
+    <div class="container-fluid">
+        <h2 class="no-margin-bottom">Administración</h2>
+    </div>
+</header>
+<!-- Dashboard Counts Section-->
+<section class="dashboard-counts no-padding-bottom">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-close">
+                <div class="dropdown">
+                    <button type="button" id="closeCard2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                    <div aria-labelledby="closeCard2" class="dropdown-menu dropdown-menu-right has-shadow">
+                        <a href="#" data-toggle="modal" (click)="$event.preventDefault(); agregar()" data-target="#exampleModal" class="dropdown-item edit"> <i class="fa fa-plus"></i>Agregar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-header d-flex align-items-center">
+                <h3 class="h4">Listado Tipo Venta</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped" *ngIf="tipoventas">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Descripcion</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let x of tipoventas">
+                                <td>{{ x.tipoVentaId }}</td>
+                                <td>
+                                    <a href="#" (click)="$event.preventDefault(); Modificar(x.tipoVentaId);" data-toggle="modal" data-target="#exampleModal2">{{
+                        x.tipoVentaDescripcion }}</a>
+                                </td>
+                                <td>
+                                    <a href="#" (click)="$event.preventDefault(); Ver(x.tipoVentaId)" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ titulo }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="tipoVentaDescripcion">Descripcion</label>
+                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="tipoVentaDescripcion" [(ngModel)]="tipvent.tipoVentaDescripcion" aria-describedby="emailHelp " placeholder="Ingrese un Tipo Venta">
+                            <input type="hidden" name="tipoVentaId" [(ngModel)]="tipvent.tipoVentaId">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="reset()" data-dismiss="modal">Cerrar</button>
+                    <input type="button" class="btn btn-primary" (click)="TipoVentaNuevo()" data-dismiss="modal" value="Guardar">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2 UPDATE-->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ titulo }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="tipoVentaDescripcion">Descripcion</label>
+                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="tipoVentaDescripcion" [(ngModel)]="tipvent.tipoVentaDescripcion" aria-describedby="emailHelp " placeholder="Ingrese un Tipo Venta">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="reset()" data-dismiss="modal">Cerrar</button>
+                    <input type="button" class="btn btn-primary" (click)="updateTipoVenta(tipvent.tipoVentaId)" data-dismiss="modal" value="Guardar">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
