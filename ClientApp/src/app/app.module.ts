@@ -10,7 +10,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 /*administracion*/
 import { HomeComponent } from './Admininistracion/home/home.component';
-import { solicitudComponent } from './Admininistracion/roles/solicitud.component';
+import { solicitudComponent } from './Admininistracion/solicitud/solicitud.component';
 import { UsuariosComponent } from './Admininistracion/usuarios/usuarios.component';
 
 import { MarcasComponent } from './Admininistracion/marcas/marcas.component';
@@ -54,9 +54,7 @@ import {EmpleadosComponent} from './Admininistracion/empleados/empleados.compone
        { path: 'usuarios', component: UsuariosComponent },
        { path: 'solicitud', component: solicitudComponent },
        { path: 'marcas', component: MarcasComponent },
-       { path: 'porcentajes', component: PorcentajeComponent },
        { path: 'tipoproducto', component: TipoproductoComponent },
-       { path: 'existencias', component: ExistenciaComponent },
        { path: 'tipoventa', component: TipoventaComponent }
 
     ])

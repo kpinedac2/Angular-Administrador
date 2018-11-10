@@ -1,0 +1,253 @@
+<!-- Page Header-->
+<header class="page-header">
+  <div class="container-fluid">
+    <h2 class="no-margin-bottom">Administración</h2>
+  </div>
+</header>
+<!-- Dashboard Counts Section-->
+<section class="dashboard-counts no-padding-bottom">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-close">
+        <div class="dropdown">
+          <button type="button" id="closeCard2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i
+              class="fa fa-ellipsis-v"></i></button>
+          <div aria-labelledby="closeCard2" class="dropdown-menu dropdown-menu-right has-shadow">
+            <a href="#" data-toggle="modal" (click)="$event.preventDefault(); agregar()" data-target="#exampleModal"
+              class="dropdown-item edit"> <i class="fa fa-plus"></i>Agregar</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-header d-flex align-items-center">
+        <h3 class="h4">Listado Solicitudes</h3>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped" *ngIf="solicitudes">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Horas Permiso</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th>Tipo Solicitud</th>
+                <th>Usuario</th>
+             
+
+
+
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let x of solicitudes">
+                <td>{{ x.id }}</td>
+                <td>
+                  <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">
+                    {{
+                    x.horasPermiso }}</a>
+                </td>
+
+
+                <td>
+                  <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">{{
+                    x.solicitudDescripcion }}</a>
+                </td>
+
+                <td>
+                  <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">{{
+                    x.solicitudEstado }}</a>
+                </td>
+
+                <td>
+                  <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">{{
+                    x.solicitudFecha }}</a>
+                </td>
+                <td>
+                  <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">{{
+                    x.tipoSolicitudId.solicitudTipo }}</a>
+                </td>
+
+                <td>
+                  <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">{{
+                    x.usuarioId.usuarioNombre }}</a>
+                </td>
+
+
+
+
+
+
+
+                <td>
+                  <a href="#" (click)="$event.preventDefault(); deleteId(x)">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </td>
+
+              </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ titulo }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="marcaNombre">Horas</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user" [(ngModel)]="soli.horasPermiso"
+                aria-describedby="emailHelp " placeholder="Ingrese nombre de usuario">
+              <input type="hidden" name="usuarios" [(ngModel)]="soli.id">
+            </div>
+
+            <div class="form-group">
+              <label for="marcaNombre">Descripcion</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user" [(ngModel)]="soli.solicitudDescripcion"
+                aria-describedby="emailHelp " placeholder="Ingrese clave">
+              <input type="hidden" name="claves" [(ngModel)]="soli.solicitudDescripcion">
+            </div>
+
+            <div class="form-group">
+              <label for="marcaNombre">Estado </label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user" [(ngModel)]="soli.solicitudEstado"
+                aria-describedby="emailHelp " placeholder="Ingrese empleado">
+              <input type="hidden" name="empleado" [(ngModel)]="soli.solicitudEstado">
+            </div>
+
+
+
+            <div class="form-group">
+              <label for="marcaNombre">Fecha</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user" [(ngModel)]="soli.solicitudFecha"
+                aria-describedby="emailHelp " placeholder="Ingrese rol">
+              <input type="hidden" name="claves" [(ngModel)]="soli.solicitudFecha">
+            </div>
+
+            <div class="form-group">
+              <label for="marcaNombre">Tipo Solicitud</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user" [(ngModel)]="soli.tipoSolicitudId"
+                aria-describedby="emailHelp " placeholder="Ingrese rol">
+              <input type="hidden" name="claves" [(ngModel)]="soli.tipoSolicitudId">
+            </div>
+
+            <div class="form-group">
+              <label for="marcaNombre">Usuario</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user" [(ngModel)]="soli.usuarioId"
+                aria-describedby="emailHelp " placeholder="Ingrese rol">
+              <input type="hidden" name="claves" [(ngModel)]="soli.usuarioId">
+            </div>
+
+
+
+
+
+
+
+
+
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="reset()" data-dismiss="modal">Cerrar</button>
+          <input type="button" class="btn btn-primary" (click)="guardar()" data-dismiss="modal" value="Guardar">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- Modal 2 UPDATE-->
+  <!-- <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{ titulo }}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="nombres">Nombres</label>
+                      <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombres "
+                        [(ngModel)]="emple.nombres" aria-describedby="emailHelp " placeholder="Nombre">
+                      <input type="hidden" name="id" [(ngModel)]="emple.nombres">
+                    </div>
+                    <div class="form-group ">
+                      <label for="apellidos ">Apellidos</label>
+                      <input disabled="{{ buttonDisabled}}" type="text" class="form-control" name="apellidos"
+                        [(ngModel)]="emple.apellidos" placeholder="Apellido">
+                    </div>
+        
+                    <div class="form-group ">
+                      <label for="direccion ">Direccion</label>
+                      <input disabled="{{ buttonDisabled}}" type="text" class="form-control" name="direccion"
+                        [(ngModel)]="emple.direccion" placeholder="Fecha de Nacimiento">
+                    </div>
+        
+                    <div class="form-group ">
+                      <label for="edad ">Edad</label>
+                      <input disabled="{{ buttonDisabled}}" type="text" class="form-control" name="edad"
+                        [(ngModel)]="emple.edad" placeholder="Direccion">
+                    </div>
+        
+                    <div class="form-group ">
+                      <label for="sexo ">Sexo</label>
+                      <input disabled="{{ buttonDisabled}}" type="text" class="form-control" name="sexo"
+                        [(ngModel)]="emple.sexo" placeholder="Direccion">
+                    </div>
+        
+                    <div class="form-group ">
+                      <label for="sueldo ">Sueldo</label>
+                      <input disabled="{{ buttonDisabled}}" type="text" class="form-control" name="sueldo" [(ngModel)]="emple.sueldo"
+                        placeholder="Genero">
+                    </div>
+        
+                    <div class="form-group ">
+                      <label for="telefono ">Telefono</label>
+                      <input disabled="{{ buttonDisabled}}" type="text" class="form-control" name="telefono" [(ngModel)]="emple.telefono"
+                        placeholder="example@gmail.com">
+                    </div>
+        
+        
+        
+        
+                  </form>
+        
+        
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" (click)="reset()" data-dismiss="modal">Cerrar</button>
+                  <input type="button" class="btn btn-primary" (click)="updateEmpl(emple.id)" data-dismiss="modal"
+                    value="Guardar">
+                </div>
+              </div>
+            </div>
+          </div> -->
+</section>

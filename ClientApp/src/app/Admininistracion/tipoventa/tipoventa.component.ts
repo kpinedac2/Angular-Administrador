@@ -14,21 +14,21 @@ export class TipoventaComponent {
  private tipvent: {}; 
 
  private tipoventax: {
-  tipoVentaId:number; 
-  tipoVentaDescripcion:string; 
+  id:number; 
+  tipoVenta:string; 
 }; 
  public buttonDisabled:boolean; 
 
 
   constructor(private _http:HttpClient) {
-    this.myAppUrl = 'http://localhost:5000/'; 
+    this.myAppUrl = 'http://gamercash.info:8080/'; 
     this.tipvent =  {}; 
     this.buttonDisabled = true; 
     this.getTipoVenta(); 
   }
 
   public getTipoVenta() {
-    this._http.get < TipoVenta[] > (this.myAppUrl + 'api/tipoventa').subscribe(result =>  {
+    this._http.get < TipoVenta[] > (this.myAppUrl + 'ventatipos').subscribe(result =>  {
       this.tipoventas = result; 
      }, error => console.error(error)); 
   }
@@ -52,7 +52,7 @@ export class TipoventaComponent {
   }
 
   public getTipoVentaID(id) {
-    this._http.get <TipoVenta> (this.myAppUrl + 'api/tipoventa/' + id).subscribe(result =>  {
+    this._http.get <TipoVenta> (this.myAppUrl + 'ventatipos/' + id).subscribe(result =>  {
      this.tipvent = result;
     }, error => console.error(error)); 
   }
@@ -62,14 +62,14 @@ export class TipoventaComponent {
   public deleteId(persona) {
     var ans = confirm("Esta seguro de eliminar" + persona.nombre)
     if (ans) {
-    this._http.delete < TipoVenta[] > (this.myAppUrl + 'api/tipoventa/' + persona.id).subscribe(result =>  {
+    this._http.delete < TipoVenta[] > (this.myAppUrl + 'ventatipos/' + persona.id).subscribe(result =>  {
     this.getTipoVenta(); 
     }, error => console.error(error)); }
      
   }
 
   public TipoVentaNuevo() {
-    this._http.post <TipoVenta> (this.myAppUrl + 'api/tipoventa', this.tipvent).subscribe(result =>  {
+    this._http.post <TipoVenta> (this.myAppUrl + 'ventatipos', this.tipvent).subscribe(result =>  {
         this.reset(); 
         this.getTipoVenta(); 
         //this.persona = result; 
@@ -98,7 +98,7 @@ export class TipoventaComponent {
 
   public updateTipoVenta(id:number){
     this.getTipoVentaID(id)
-    this._http.put < TipoVenta[] > (this.myAppUrl + 'api/tipoventa/' + id, this.tipvent).subscribe(result =>  {
+    this._http.put < TipoVenta[] > (this.myAppUrl + 'ventatipos/' + id, this.tipvent).subscribe(result =>  {
       this.reset(); 
       this.getTipoVenta(); 
       //this.persona = result;         
@@ -114,8 +114,8 @@ export class TipoventaComponent {
 
 
 interface TipoVenta {
-  tipoVentaId:number; 
-  tipoVentaDescripcion:string; 
+  id:number; 
+  tipoVenta:string; 
 }
 
 

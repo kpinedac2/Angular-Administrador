@@ -27,16 +27,23 @@
                                     <th>#</th>
                                     <th>Descripcion</th>
                                     <th></th>
+                                    <th>Nombre</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let x of tipoProduct">
-                                    <td>{{ x.tipoProductosId }}</td>
+                                    <td>{{ x.id }}</td>
                                     <td>
-                                        <a href="#" (click)="$event.preventDefault(); Modificar(x.tipoProductosId);" data-toggle="modal" data-target="#exampleModal2">{{
-                            x.tipoProductoDescripcion }}</a>
+                                        <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">{{
+                                    x.categoriaDescripcion }}</a>
                                     </td>
                                     <td>
+                                            <td>
+                                                    <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">{{
+                                        x.categoriaNombre }}</a>
+                                                </td>
+                                                <td>
                                         <a href="#" (click)="$event.preventDefault(); Ver(x.tipoProductosId)" data-toggle="modal" data-target="#exampleModal">
                                             <i class="fa fa-eye"></i>
                                         </a>
@@ -64,9 +71,18 @@
                         <form>
                             <div class="form-group">
                                 <label for="tipoProductoDescripcion">Descripcion</label>
-                                <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="tipoProductoDescripcion" [(ngModel)]="TipProduct.tipoProductoDescripcion" aria-describedby="emailHelp " placeholder="Ingrese un Tipo Producto">
-                                <input type="hidden" name="tipoProductosId" [(ngModel)]="TipProduct.tipoProductosId">
+                                <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="tipoProductoDescripcion"
+                                 [(ngModel)]="TipProduct.categoriaDescripcion" aria-describedby="emailHelp " placeholder="Ingrese un Tipo Producto">
+                                <input type="hidden" name="categoriaDescripcion" [(ngModel)]="TipProduct.id">
                             </div>
+
+                            <div class="form-group">
+                                    <label for="tipoProductoDescripcion">Nombre</label>
+                                    <input disabled="{{ buttonDisabled}}" type=" text " class="form-control "
+                                     name="tipoProductoDescripcion" [(ngModel)]="TipProduct.categoriaNombre" aria-describedby="emailHelp "
+                                      placeholder="Ingrese un Tipo Producto">
+                                    <input type="hidden" name="categoriaNombre" [(ngModel)]="TipProduct.id">
+                                </div>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -91,8 +107,19 @@
                             <form>
                                 <div class="form-group">
                                     <label for="tipoProductoDescripcion">Descripcion</label>
-                                    <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="tipoProductoDescripcion" [(ngModel)]="TipProduct.tipoProductoDescripcion" aria-describedby="emailHelp " placeholder="Ingrese una marca">
+                                    <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " 
+                                    name="tipoProductoDescripcion" [(ngModel)]="TipProduct.id" 
+                                    aria-describedby="emailHelp " placeholder="Ingrese una marca">
                                 </div>
+
+                                <div class="form-group">
+                                        <label for="tipoProductoDescripcion">Nombre</label>
+                                        <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " 
+                                        name="tipoProductoDescripcion" [(ngModel)]="TipProduct.id" 
+                                        aria-describedby="emailHelp " placeholder="Ingrese una marca">
+                                    </div>
+                               
+                            
                             </form>
                         </div>
                         <div class="modal-footer">

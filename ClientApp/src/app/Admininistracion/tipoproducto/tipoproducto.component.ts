@@ -14,21 +14,22 @@ export class TipoproductoComponent {
  private TipProduct: {}; 
 
  private tipoproductox: {
-  tipoProductosId:number; 
-  tipoProductoDescripcion:string; 
+  id:number; 
+  categoriaDescripcion:string; 
+  categoriaNombre:string; 
 }; 
  public buttonDisabled:boolean; 
 
 
   constructor(private _http:HttpClient) {
-    this.myAppUrl = 'http://localhost:5000/'; 
+    this.myAppUrl = 'http://gamercash.info:8080/'; 
     this.TipProduct =  {}; 
     this.buttonDisabled = true; 
     this.getTipoProducto(); 
   }
 
   public getTipoProducto() {
-    this._http.get < TipoProduct[] > (this.myAppUrl + 'api/tipoproducto').subscribe(result =>  {
+    this._http.get < TipoProduct[] > (this.myAppUrl + 'productocategorias').subscribe(result =>  {
       this.tipoProduct = result; 
      }, error => console.error(error)); 
   }
@@ -52,7 +53,7 @@ export class TipoproductoComponent {
   }
 
   public getTipoProductoID(id) {
-    this._http.get <TipoProduct> (this.myAppUrl + 'api/tipoproducto/' + id).subscribe(result =>  {
+    this._http.get <TipoProduct> (this.myAppUrl + 'productocategorias/' + id).subscribe(result =>  {
      this.TipProduct = result;
     }, error => console.error(error)); 
   }
@@ -62,7 +63,7 @@ export class TipoproductoComponent {
   public deleteId(persona) {
     var ans = confirm("Esta seguro de eliminar" + persona.nombre)
     if (ans) {
-    this._http.delete < TipoProduct[] > (this.myAppUrl + 'api/tipoproducto/' + persona.id).subscribe(result =>  {
+    this._http.delete < TipoProduct[] > (this.myAppUrl + 'productocategorias/' + persona.id).subscribe(result =>  {
     this.getTipoProducto(); 
     }, error => console.error(error)); }
      
@@ -70,7 +71,7 @@ export class TipoproductoComponent {
   
 
   public TipoProductoNuevo() {
-    this._http.post <TipoProduct> (this.myAppUrl + 'api/tipoproducto', this.TipProduct).subscribe(result =>  {
+    this._http.post <TipoProduct> (this.myAppUrl + 'productocategorias', this.TipProduct).subscribe(result =>  {
         this.reset(); 
         this.getTipoProducto(); 
         //this.persona = result; 
@@ -99,7 +100,7 @@ export class TipoproductoComponent {
 
   public updateTipoProducto(id:number){
     this.getTipoProductoID(id)
-    this._http.put < TipoProduct[] > (this.myAppUrl + 'api/tipoproducto/' + id, this.TipProduct).subscribe(result =>  {
+    this._http.put < TipoProduct[] > (this.myAppUrl + 'productocategorias/' + id, this.TipProduct).subscribe(result =>  {
       this.reset(); 
       this.getTipoProducto(); 
       //this.persona = result;         
@@ -115,8 +116,9 @@ export class TipoproductoComponent {
 
 
 interface TipoProduct {
-  tipoProductosId:number; 
-  tipoProductoDescripcion:string; 
+  id:number; 
+  categoriaDescripcion:string; 
+  categoriaNombre:string; 
 }
 
 

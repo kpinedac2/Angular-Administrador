@@ -31,10 +31,10 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let x of tipoventas">
-                                <td>{{ x.tipoVentaId }}</td>
+                                <td>{{ x.id }}</td>
                                 <td>
                                     <a href="#" (click)="$event.preventDefault(); Modificar(x.tipoVentaId);" data-toggle="modal" data-target="#exampleModal2">{{
-                        x.tipoVentaDescripcion }}</a>
+                        x.tipoVenta }}</a>
                                 </td>
                                 <td>
                                     <a href="#" (click)="$event.preventDefault(); Ver(x.tipoVentaId)" data-toggle="modal" data-target="#exampleModal">
@@ -64,8 +64,9 @@
                     <form>
                         <div class="form-group">
                             <label for="tipoVentaDescripcion">Descripcion</label>
-                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="tipoVentaDescripcion" [(ngModel)]="tipvent.tipoVentaDescripcion" aria-describedby="emailHelp " placeholder="Ingrese un Tipo Venta">
-                            <input type="hidden" name="tipoVentaId" [(ngModel)]="tipvent.tipoVentaId">
+                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " 
+                            name="tipoVentaDescripcion" [(ngModel)]="tipvent.tipoVenta" aria-describedby="emailHelp " placeholder="Ingrese un Tipo Venta">
+                            <input type="hidden" name="tipoVentaId" [(ngModel)]="tipvent.id">
                         </div>
                     </form>
                 </div>
@@ -90,7 +91,8 @@
                     <form>
                         <div class="form-group">
                             <label for="tipoVentaDescripcion">Descripcion</label>
-                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="tipoVentaDescripcion" [(ngModel)]="tipvent.tipoVentaDescripcion" aria-describedby="emailHelp " placeholder="Ingrese un Tipo Venta">
+                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="tipoVentaDescripcion" 
+                            [(ngModel)]="tipvent.tipoVenta" aria-describedby="emailHelp " placeholder="Ingrese un Tipo Venta">
                         </div>
                     </form>
                 </div>
