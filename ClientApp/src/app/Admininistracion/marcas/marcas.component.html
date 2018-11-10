@@ -41,7 +41,8 @@
                       
 
                                 <td>
-                                    <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" data-target="#exampleModal2">{{
+                                    <a href="#" (click)="$event.preventDefault(); Modificar(x.id);" data-toggle="modal" 
+                                    data-target="#exampleModal2">{{
                         x.marcaDescripcion }}</a>
                                 </td>
                                 <td>
@@ -72,14 +73,17 @@
                     <form>
                             <div class="form-group">
                                     <label for="marcaNombre">Marca</label>
-                                    <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="marcasDescripcion" [(ngModel)]="marca.marcaNombre" aria-describedby="emailHelp " placeholder="Ingrese una marca">
+                                    <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " 
+                                    name="marcasDescripcion" [(ngModel)]="marca.marcaNombre" aria-describedby="emailHelp " placeholder="Ingrese una marca">
                                     <input type="hidden" name="marcasId" [(ngModel)]="marca.id">
                                 </div>
 
 
                         <div class="form-group">
                             <label for="marcaDescripcion">Descripcion</label>
-                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="marcasDescripcion" [(ngModel)]="marca.marcaDescripcion" aria-describedby="emailHelp " placeholder="Ingrese una marca">
+                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control "
+                             name="marca_descripcion" [(ngModel)]="marca.marcaDescripcion" aria-describedby="emailHelp " 
+                             placeholder="Ingrese una marca">
                             <input type="hidden" name="marcasId" [(ngModel)]="marca.id">
                         </div>
                     </form>
@@ -104,14 +108,18 @@
                 <div class="modal-body">
                     <form>
                             <div class="form-group">
-                                    <label for="marcasDescripcion">Marca</label>
-                                    <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="marcasDescripcion" [(ngModel)]="marca.marcaNombre" aria-describedby="emailHelp " placeholder="Ingrese una marca">
+                                    <label for="marcaNombre">Marca</label>
+                                    <input disabled="{{ buttonDisabled}}" type=" text " class="form-control "
+                                     name="marcaNombre" [(ngModel)]="marca.marcaNombre" aria-describedby="emailHelp "
+                                      placeholder="Ingrese una marca">
                                     <input type="hidden" name="marcasId" [(ngModel)]="marca.id">
                                 </div>
 
                         <div class="form-group">
                             <label for="marcasDescripcion">Descripcion</label>
-                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="marcasDescripcion" [(ngModel)]="marca.marcaDescripcion" aria-describedby="emailHelp " placeholder="Ingrese una marca">
+                            <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " 
+                            name="marcasDescripcion" [(ngModel)]="marca.marcaDescripcion" aria-describedby="emailHelp "
+                             placeholder="Ingrese una marca">
                         </div>
                     </form>
                 </div>

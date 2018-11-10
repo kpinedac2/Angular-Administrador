@@ -72,6 +72,7 @@ export class MarcasComponent {
 
   public MarcaNueva() {
     this._http.post <Marcas> (this.myAppUrl + '/marcas', this.marca).subscribe(result =>  {
+      console.log(this.marca);
         this.reset(); 
         this.getMarcas(); 
         //this.persona = result; 
@@ -119,6 +120,7 @@ interface Marcas {
   id:number; 
   marcaDescripcion:string; 
   marcaNombre:string; 
+
 }
 
 

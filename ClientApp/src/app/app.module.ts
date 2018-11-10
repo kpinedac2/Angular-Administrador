@@ -10,15 +10,16 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 /*administracion*/
 import { HomeComponent } from './Admininistracion/home/home.component';
-import { RolesComponent } from './Admininistracion/roles/roles.component';
+import { solicitudComponent } from './Admininistracion/roles/solicitud.component';
 import { UsuariosComponent } from './Admininistracion/usuarios/usuarios.component';
-import { PermisosComponent } from './Admininistracion/permisos/permisos.component';
+
 import { MarcasComponent } from './Admininistracion/marcas/marcas.component';
 import {PorcentajeComponent} from './Admininistracion/porcentaje/porcentaje.component';
 import { TipoproductoComponent } from './Admininistracion/tipoproducto/tipoproducto.component';
 import {ExistenciaComponent} from './Admininistracion/existencias/existencias.component';
 import {TipoventaComponent} from './Admininistracion/tipoventa/tipoventa.component';
 import {EmpleadosComponent} from './Admininistracion/empleados/empleados.component';
+
 
 
 
@@ -32,8 +33,8 @@ import {EmpleadosComponent} from './Admininistracion/empleados/empleados.compone
      /*Administracion*/
      HomeComponent,
      UsuariosComponent,
-     RolesComponent,
-     PermisosComponent,
+     solicitudComponent,
+   
      MarcasComponent,
      PorcentajeComponent,
      TipoproductoComponent,
@@ -51,8 +52,7 @@ import {EmpleadosComponent} from './Admininistracion/empleados/empleados.compone
        /*Administracion*/
        { path: 'empleados', component: EmpleadosComponent },
        { path: 'usuarios', component: UsuariosComponent },
-       { path: 'roles', component: RolesComponent },
-       { path: 'permisos', component: PermisosComponent },
+       { path: 'solicitud', component: solicitudComponent },
        { path: 'marcas', component: MarcasComponent },
        { path: 'porcentajes', component: PorcentajeComponent },
        { path: 'tipoproducto', component: TipoproductoComponent },

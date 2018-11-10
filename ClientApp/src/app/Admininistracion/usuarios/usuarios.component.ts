@@ -9,12 +9,11 @@ import {Component, Inject }from '@angular/core';
 export class UsuariosComponent {
   public usuariosX:users[] = [];
   private titulo = 'Agregar Tipo Producto'; 
-  usuarios: Array<users> = [];
+  usuarios:any;
 
-  empleado: Array<empleados>=[];
+  empleado:any;
 
-  roles: Array<roles>=[];
-
+  roles: any;
 
 
 
@@ -52,15 +51,22 @@ private rolx: {
  
  
    constructor(private _http:HttpClient) {
-     this.myAppUrl = 'http://localhost:5000'; 
+     this.myAppUrl = 'http://gamercash.info:8080'; 
      this.us =  {}; 
      this.roll={};
      this.empleadito={};
      this.buttonDisabled = true; 
      this.getus(); 
      this.getemplo();
+     this.getRol();
+   
+     
+     
    }
  
+
+ 
+
    public getus() {
      this._http.get < users[] > (this.myAppUrl + '/usuarios').subscribe(result =>  {
        this.usuarios = result; 
@@ -111,77 +117,32 @@ private rolx: {
    }
  
    public getEmpleID(id) {
-    this._http.get <users> (this.myAppUrl + '/empleados/' + id).subscribe(result =>  {
+    this._http.get <empleados> (this.myAppUrl + '/empleados/' + id).subscribe(result =>  {
      this.empleadito = result;
     }, error => console.error(error)); 
   }
 
   public getRolID(id) {
-    this._http.get <users> (this.myAppUrl + '/roles/' + id).subscribe(result =>  {
+    this._http.get <roles> (this.myAppUrl + '/roles/' + id).subscribe(result =>  {
      this.roll = result;
     }, error => console.error(error)); 
   }
-   
  
-   public deleteId(persona) {
-     var ans = confirm("Esta seguro de eliminar" + persona.nombre)
-     if (ans) {
-     this._http.delete < users[] > (this.myAppUrl + '/usuarios/' + persona.id).subscribe(result =>  {
-      this.getus(); 
-      this.getemplo();
-      this.getRol();
-     }, error => console.error(error)); }
-      
-   }
-   
- 
-   public UserNuevo() {
-     this._http.post <users> (this.myAppUrl + '/usuarios', this.us).subscribe(result =>  {
-         this.reset(); 
-         this.getus(); 
-         this.getemplo();
-         this.getRol();
-         //this.persona = result; 
-         console.log(result);
-       }, error => console.error(error)); 
- /*
-     if (this.marca == undefined) {
-         this._http.post <Marcas> (this.myAppUrl + 'api/marcas', this.marca).subscribe(result =>  {
-         this.reset(); 
-         this.getMarcas(); 
-         //this.persona = result; 
-         console.log(result);
-         }, error => console.error(error)); 
-     }else {
-          this._http.put < Marcas[] > (this.myAppUrl + 'api/marcas/' + this.marca.marcasId, this.marca).subscribe(result =>  {
-         this.reset(); 
-         this.getMarcas(); 
-         //this.persona = result;         
-        }, error => console.error(error)); 
- 
-        
-     }
- 
-     */
-   }
- 
- 
- 
- 
- 
-   public updateUser(id:number){
-     this.getUserID(id)
-     this.getRolID(id)
-     this.getEmpleID(id)
-     this._http.put < users[] > (this.myAppUrl + '/usuarios/' + id, this.us).subscribe(result =>  {
-       this.reset(); 
-       this.getus(); 
-       this.getemplo();
-       this.getRol();
-    
-       //this.persona = result;         
-      }, error => console.error(error)); 
-   }
+
+public guardar()
+{
+  this._http.post <users> (this.myAppUrl + '/usuarios', this.us).subscribe(result =>  {
+    console.log(result);
+    this.reset(); 
+    this.getus();
+    this.getRol();
+    this.getemplo();
+    //this.persona = result; 
+    console.log(result);
+  }, error => console.error(error)); 
+
+
+}
    
  
    public reset() {
@@ -194,24 +155,15 @@ private rolx: {
  
 
 
- interface users {
-  id:number; 
-  usuarioClave:string; 
-  usuarioNombre:string;
-  empleadoId:number; 
-  rolId:string; 
- 
-
-}
 
 
 interface roles {
-  id:number; 
+  id:0; 
   rol:string; 
 }
 
 interface empleados {
-  id:number; 
+  id:0; 
   nombres:string; 
   apellidos:string;
   direccion:string; 
@@ -225,11 +177,10 @@ interface empleados {
 
 
 interface users {
-  id:number; 
+  id:0; 
   usuarioClave:string; 
   usuarioNombre:string;
   empleadoId:number; 
   rolId:string; 
- 
 
 }
