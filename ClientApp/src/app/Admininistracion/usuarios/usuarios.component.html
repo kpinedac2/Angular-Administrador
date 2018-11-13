@@ -110,31 +110,33 @@
 
             <div class="form-group">
               <label for="marcaNombre">Clave Usuario</label>
-              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user"
-               [(ngModel)]="us.usuarioClave"
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user" [(ngModel)]="us.usuarioClave"
                 aria-describedby="emailHelp " placeholder="Ingrese clave">
               <input type="hidden" name="claves" [(ngModel)]="us.id">
             </div>
 
-            <div class="form-group">
-              <label for="marcaNombre">empleado </label>
-              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user"
-               [(ngModel)]="us.empleadoId"
-                aria-describedby="emailHelp " placeholder="Ingrese empleado">
-              <input type="hidden" name="empleado" [(ngModel)]="us.id">
+            <div>
+
+              <select>
+                <option>
+                  Elija un Empleado
+                </option>
+                <option *ngFor="let e of empleado" (click)="emple(e)">
+                  {{e.nombres}}
+                </option>
+              </select>
             </div>
 
-
-
-            <div class="form-group">
-              <label for="marcaNombre">rol</label>
-              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="nombre user"
-               [(ngModel)]="us.rolId"
-                aria-describedby="emailHelp " placeholder="Ingrese rol">
-              <input type="hidden" name="claves" [(ngModel)]="us.id">
+            <div>
+              <select>
+                <option>
+                  Elija un Rol
+                </option>
+                <option *ngFor="let r of roles" (click)="role(r)">
+                  {{r.rol}}
+                </option>
+              </select>
             </div>
-
-
 
 
 

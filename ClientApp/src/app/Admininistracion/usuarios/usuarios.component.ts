@@ -10,11 +10,11 @@ export class UsuariosComponent {
   public usuariosX:users[] = [];
   private titulo = 'Agregar Tipo Producto'; 
   usuarios:any;
-
   empleado:any;
-
   roles: any;
 
+  rolmetodo: any;
+  emplemetodo:any;
 
 
   private  myAppUrl:string; 
@@ -22,12 +22,12 @@ export class UsuariosComponent {
   private roll: {}; 
   private empleadito: {}; 
  
-  private userx: {
+  public userx: {
     id:number; 
     usuarioClave:string; 
     usuarioNombre:string;
     empleadoId:number; 
-    rolId:string; 
+    rolId:number; 
  
  };  
  private empeladox: {
@@ -88,13 +88,13 @@ private rolx: {
 
  
    public agregar() {
-     this.titulo = 'Nuevo Empleado'
+     this.titulo = 'Nuevo Usuario'
      this.buttonDisabled = false; 
      
    }
  
    public Modificar(id) {
-     this.titulo = 'Modificar Nuevo Empleado'
+     this.titulo = 'Modificar Nuevo Usuario'
      this.getUserID(id); 
      this.getRolID(id);
      this.getEmpleID(id);
@@ -103,7 +103,7 @@ private rolx: {
    }
  
    public Ver(id) {
-     this.titulo = 'Ver Empleado'
+     this.titulo = 'Ver Usuario'
      this.getUserID(id); 
      this.getRolID(id);
      this.getEmpleID(id);
@@ -131,25 +131,58 @@ private rolx: {
 
 public guardar()
 {
-  this._http.post <users> (this.myAppUrl + '/usuarios', this.us).subscribe(result =>  {
-    console.log(result);
-    this.reset(); 
-    this.getus();
-    this.getRol();
-    this.getemplo();
-    //this.persona = result; 
-    console.log(result);
-  }, error => console.error(error)); 
+  this._http.post <users> (this.myAppUrl + '/usuarios', 
+{
+/*
+  usuarioClave: this.us.usuarioClave,
+  usuarioNombre: this.us.usuarioNombre,
+  empleadoId:this.emplemetodo ,
+  rolId:this.rolmetodo
+*/
 
+usuarioClave: this.us.usuarioClave,
+usuarioNombre: this.us.usuarioNombre,
+empleadoId:this.emplemetodo ,
+rolId:this.rolmetodo
+}
+
+
+
+).subscribe(result =>  {
+    console.log(result);
+    this.getus();
+   this.emplemetodo;
+   this.rolmetodo;
+    //this.persona = result; 
+  
+    console.log(this.rolmetodo);
+  }, error => console.error(error)); 
+/*
+console.log("valor de us");
+console.log(this.us.usuarioClave);
+console.log(this.us.usuarioNombre);*/
 
 }
    
  
    public reset() {
      this.us =  {}; 
-     this. roll= {}; 
-     this. empleadito= {};
+     this. rolmetodo= {}; 
+     this. emplemetodo= {};
    }
+
+   emple(e){   
+     this.emplemetodo=e.id;
+     console.log(this.emplemetodo)
+   
+   
+     
+   }
+
+   role(r){   
+    this.rolmetodo=r.id;
+console.log(this.rolmetodo)
+  }
  
  }
  

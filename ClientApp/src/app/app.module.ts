@@ -12,11 +12,10 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './Admininistracion/home/home.component';
 import { solicitudComponent } from './Admininistracion/solicitud/solicitud.component';
 import { UsuariosComponent } from './Admininistracion/usuarios/usuarios.component';
-
 import { MarcasComponent } from './Admininistracion/marcas/marcas.component';
 import {PorcentajeComponent} from './Admininistracion/porcentaje/porcentaje.component';
 import { TipoproductoComponent } from './Admininistracion/tipoproducto/tipoproducto.component';
-import {ExistenciaComponent} from './Admininistracion/existencias/existencias.component';
+import {ProdutosComponent} from './Admininistracion/productos/productos.component';
 import {TipoventaComponent} from './Admininistracion/tipoventa/tipoventa.component';
 import {EmpleadosComponent} from './Admininistracion/empleados/empleados.component';
 
@@ -38,7 +37,7 @@ import {EmpleadosComponent} from './Admininistracion/empleados/empleados.compone
      MarcasComponent,
      PorcentajeComponent,
      TipoproductoComponent,
-     ExistenciaComponent,
+     ProdutosComponent,
      TipoventaComponent,
      EmpleadosComponent
     
@@ -55,8 +54,10 @@ import {EmpleadosComponent} from './Admininistracion/empleados/empleados.compone
        { path: 'solicitud', component: solicitudComponent },
        { path: 'marcas', component: MarcasComponent },
        { path: 'tipoproducto', component: TipoproductoComponent },
-       { path: 'tipoventa', component: TipoventaComponent }
+       { path: 'tipoventa', component: TipoventaComponent },
+       { path: 'productos', component: ProdutosComponent }
 
+       
     ])
   ],
   providers: [],
