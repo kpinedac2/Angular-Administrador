@@ -27,16 +27,16 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>alerta</th>
-                <th>disponibles</th>
-                <th>precioCompra</th>
-                <th>precioVenta</th>
-                <th>productoCodigo</th>
-                <th>productoNombre</th>
-                <th>vencimiento</th>
-                <th>categoriaId</th>
-                <th>marcaId</th>
-                <th>proveedorId</th>
+                <th>Alerta</th>
+                <th>Disponibles</th>
+                <th>Precio Compra</th>
+                <th>Precio Venta</th>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Vencimiento</th>
+                <th>Categoria</th>
+                <th>Marca</th>
+                <th>Proveerdor</th>
 
                 <th></th>
                 <th></th>
@@ -95,7 +95,7 @@
 
 
                 <td>
-                  <a href="#" (click)="$event.preventDefault(); Ver(x.id)" data-toggle="modal" data-target="#exampleModal">
+                  <a href="#" (click)="$event.preventDefault(); Ver(x.id)" data-toggle="modal" data-target="#exampleModal2">
                     <i class="fa fa-eye"></i>
                   </a>
                 </td>
@@ -129,83 +129,83 @@
             <div class="form-group">
               <label for="empleadoNombre1">Alerta</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-               [(ngModel)]="product.alerta"
+               [(ngModel)]="produc.alerta"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.id">
+              <input type="hidden" name="id" [(ngModel)]="produc.id">
             </div>
 
             <div class="form-group">
                 <label for="empleadoNombre1">Disponibles</label>
                 <input disabled="{{ buttonDisabled}}" type=" text " class="form-control "
                  name="Nombres "
-                 [(ngModel)]="product.disponibles"
+                 [(ngModel)]="produc.disponibles"
                   aria-describedby="emailHelp " placeholder="Nombre">
-                <input type="hidden" name="id" [(ngModel)]="product.disponibles">
+                <input type="hidden" name="id" [(ngModel)]="produc.disponibles">
               </div>
 
 
             <div class="form-group">
               <label for="empleadoNombre1">Precio Compra</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-               [(ngModel)]="product.precioCompra"
+               [(ngModel)]="produc.precioCompra"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.precioCompra">
+              <input type="hidden" name="id" [(ngModel)]="produc.precioCompra">
             </div>
 
             <div class="form-group">
               <label for="empleadoNombre1">Venta</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
-              [(ngModel)]="product.precioVenta"
+              [(ngModel)]="produc.precioVenta"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.precioVenta">
+              <input type="hidden" name="id" [(ngModel)]="produc.precioVenta">
             </div>
 
             <div class="form-group">
               <label for="empleadoNombre1">Codigo</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-               [(ngModel)]="product.productoCodigo"
+               [(ngModel)]="produc.productoCodigo"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.productoCodigo">
+              <input type="hidden" name="id" [(ngModel)]="produc.productoCodigo">
             </div>
 
             <div class="form-group">
               <label for="empleadoNombre1">Nombre</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
-              [(ngModel)]="product.productoNombre"
+              [(ngModel)]="produc.productoNombre"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.productoNombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.productoNombre">
             </div>
 
             <div class="form-group">
               <label for="empleadoNombre1">vencimiento</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
-              [(ngModel)]="product.vencimiento"
+              [(ngModel)]="produc.vencimiento"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.vencimiento">
+              <input type="hidden" name="id" [(ngModel)]="produc.vencimiento">
             </div>
 
             <div class="form-group">
               <label for="empleadoNombre1">Categoria</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-               [(ngModel)]="product.categoriaId"
+               [(ngModel)]="produc.categoriaId"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.categoriaId">
+              <input type="hidden" name="id" [(ngModel)]="produc.categoriaId">
             </div>
 
             <div class="form-group">
               <label for="empleadoNombre1">Marca</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-               [(ngModel)]="product.marcaId"
+               [(ngModel)]="produc.marcaId"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.marcaId">
+              <input type="hidden" name="id" [(ngModel)]="produc.marcaId">
             </div>
 
             <div class="form-group">
               <label for="empleadoNombre1">Proveedor</label>
               <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-               [(ngModel)]="product.proveedorId"
+               [(ngModel)]="produc.proveedorId"
                 aria-describedby="emailHelp " placeholder="Nombre">
-              <input type="hidden" name="id" [(ngModel)]="product.proveedorId">
+              <input type="hidden" name="id" [(ngModel)]="produc.proveedorId">
             </div>
 
 
@@ -216,7 +216,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="reset()" data-dismiss="modal">Cerrar</button>
-          <input type="button" class="btn btn-primary" (click)="EmpleadoNuevo()" data-dismiss="modal" value="Guardar">
+          <input type="button" class="btn btn-primary" (click)="ProductNuevo()" data-dismiss="modal" value="Guardar">
         </div>
       </div>
     </div>
@@ -235,88 +235,90 @@
         </div>
         <div class="modal-body">
           <form>
-              <div class="form-group">
-                  <label for="empleadoNombre1">Alerta</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-                   [(ngModel)]="product.alerta"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.alerta">
-                </div>
-    
-                <div class="form-group">
-                    <label for="empleadoNombre1">Disponibles</label>
-                    <input disabled="{{ buttonDisabled}}" type=" text " class="form-control "
-                     name="Nombres "
-                     [(ngModel)]="product.disponibles"
-                      aria-describedby="emailHelp " placeholder="Nombre">
-                    <input type="hidden" name="id" [(ngModel)]="product.disponibles">
-                  </div>
-    
-    
-                <div class="form-group">
-                  <label for="empleadoNombre1">Precio Compra</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-                   [(ngModel)]="product.precioCompra"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.precioCompra">
-                </div>
-    
-                <div class="form-group">
-                  <label for="empleadoNombre1">Venta</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
-                  [(ngModel)]="product.precioVenta"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.precioVenta">
-                </div>
-    
-                <div class="form-group">
-                  <label for="empleadoNombre1">Codigo</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-                   [(ngModel)]="product.productoCodigo"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.productoCodigo">
-                </div>
-    
-                <div class="form-group">
-                  <label for="empleadoNombre1">Nombre</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
-                  [(ngModel)]="product.productoNombre"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.productoNombre">
-                </div>
-    
-                <div class="form-group">
-                  <label for="empleadoNombre1">vencimiento</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
-                  [(ngModel)]="product.vencimiento"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.vencimiento">
-                </div>
-    
-                <div class="form-group">
-                  <label for="empleadoNombre1">Categoria</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-                   [(ngModel)]="product.categoriaId"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.categoriaId">
-                </div>
-    
-                <div class="form-group">
-                  <label for="empleadoNombre1">Marca</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-                   [(ngModel)]="product.marcaId"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.marcaId">
-                </div>
-    
-                <div class="form-group">
-                  <label for="empleadoNombre1">Proveedor</label>
-                  <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
-                   [(ngModel)]="product.proveedorId"
-                    aria-describedby="emailHelp " placeholder="Nombre">
-                  <input type="hidden" name="id" [(ngModel)]="product.proveedorId">
-                </div>
-    
+            <div class="form-group">
+              <label for="empleadoNombre1">Alerta</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
+               [(ngModel)]="produc.alerta"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.id">
+            </div>
+
+            <div class="form-group">
+                <label for="empleadoNombre1">Disponibles</label>
+                <input disabled="{{ buttonDisabled}}" type=" text " class="form-control "
+                 name="Nombres "
+                 [(ngModel)]="produc.disponibles"
+                  aria-describedby="emailHelp " placeholder="Nombre">
+                <input type="hidden" name="id" [(ngModel)]="produc.disponibles">
+              </div>
+
+
+            <div class="form-group">
+              <label for="empleadoNombre1">Precio Compra</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
+               [(ngModel)]="produc.precioCompra"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.precioCompra">
+            </div>
+
+            <div class="form-group">
+              <label for="empleadoNombre1">Venta</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
+              [(ngModel)]="produc.precioVenta"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.precioVenta">
+            </div>
+
+            <div class="form-group">
+              <label for="empleadoNombre1">Codigo</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
+               [(ngModel)]="produc.productoCodigo"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.productoCodigo">
+            </div>
+
+            <div class="form-group">
+              <label for="empleadoNombre1">Nombre</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
+              [(ngModel)]="produc.productoNombre"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.productoNombre">
+            </div>
+
+            <div class="form-group">
+              <label for="empleadoNombre1">vencimiento</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres " 
+              [(ngModel)]="produc.vencimiento"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.vencimiento">
+            </div>
+
+            <div class="form-group">
+              <label for="empleadoNombre1">Categoria</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
+               [(ngModel)]="produc.categoriaId"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.categoriaId">
+            </div>
+
+            <div class="form-group">
+              <label for="empleadoNombre1">Marca</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
+               [(ngModel)]="produc.marcaId"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.marcaId">
+            </div>
+
+            <div class="form-group">
+              <label for="empleadoNombre1">Proveedor</label>
+              <input disabled="{{ buttonDisabled}}" type=" text " class="form-control " name="Nombres "
+               [(ngModel)]="produc.proveedorId"
+                aria-describedby="emailHelp " placeholder="Nombre">
+              <input type="hidden" name="id" [(ngModel)]="produc.proveedorId">
+            </div>
+
+
+         
 
           </form>
 

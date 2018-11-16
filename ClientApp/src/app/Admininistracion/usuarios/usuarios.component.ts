@@ -133,17 +133,12 @@ public guardar()
 {
   this._http.post <users> (this.myAppUrl + '/usuarios', 
 {
-/*
+
   usuarioClave: this.us.usuarioClave,
   usuarioNombre: this.us.usuarioNombre,
   empleadoId:this.emplemetodo ,
   rolId:this.rolmetodo
-*/
 
-usuarioClave: this.us.usuarioClave,
-usuarioNombre: this.us.usuarioNombre,
-empleadoId:this.emplemetodo ,
-rolId:this.rolmetodo
 }
 
 

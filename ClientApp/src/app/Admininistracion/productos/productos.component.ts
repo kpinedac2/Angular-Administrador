@@ -7,14 +7,17 @@ import { Component, Inject } from '@angular/core';
   templateUrl: './productos.component.html'
 })
 export class ProdutosComponent {
-  public producto: Producto[] = [];
+public productos: Producto[] = [];
   private titulo = 'Agregar  Producto';
 
   private myAppUrl: string;
-  private produc: {};
+  public produc: any
+  categoria:any
+  
   cate:any;
   mark:any;
   prov:any;
+  producto:any;
 
   private Producx: {
     id: number;
@@ -44,6 +47,18 @@ export class ProdutosComponent {
       this.producto = result;
     }, error => console.error(error));
   }
+
+
+  public getEmpleID(id) {
+    this._http.get <categoria> (this.myAppUrl + '/productocategorias/' + id).subscribe(result =>  {
+     this.categoria = result;
+    }, error => console.error(error)); 
+  }
+
+
+
+
+
 
   public agregar() {
     this.titulo = 'Nuevo Tipo Producto'
@@ -80,16 +95,21 @@ export class ProdutosComponent {
   empleadoId:this.emplemetodo ,
   rolId:this.rolmetodo
 */
+
+
 alerta: this.produc.alerta,
 disponibles: this.produc.disponibles,
 precioCompra: this.produc.precioCompra,
-precioVenta: this.produc.precioVenta,
+precioVenta:  this.produc.precioVenta,
 productoCodigo: this.produc.productoCodigo,
 productoNombre: this.produc.productoNombre,
 vencimiento: this.produc.vencimiento,
 categoriaId: this.cate,
 marcaId: this.mark,
 proveedorId: this.prov
+
+
+
 
 }
 ).subscribe(result =>  {
@@ -158,6 +178,20 @@ interface Producto {
   categoriaId: number;
   marcaId: number;
   proveedorId: number;
+
+}
+
+interface categoria{
+  id: number,
+  categoriaDescripcion: string,
+  categoriaNombre: string
+
+}
+
+interface marcas{
+  id: number,
+  marcaDescripcion: string,
+  marcaNombre: string
 
 }
 
